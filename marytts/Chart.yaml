@@ -1,6 +1,6 @@
 apiVersion: v2
 name: marytts
-description: MaryTTS is an open-source, multilingual Text-to-Speech Synthesis platform written in Java
+description: MaryTTS is an open-source, multilingual Text-to-Speech Synthesis platform written in Java.
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -21,10 +21,11 @@ version: 0.1.0
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
-appVersion: "1.16.0"
+appVersion: "5.2"
 
 sources:
 - https://github.com/marytts/marytts
+- https://github.com/synesthesiam/docker-marytts
 - https://hub.docker.com/r/synesthesiam/marytts
 
 maintainers:

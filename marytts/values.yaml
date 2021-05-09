@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: synesthesiam/marytts
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  # tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
@@ -16,7 +16,7 @@ fullnameOverride: ""
 
 serviceAccount:
   # Specifies whether a service account should be created
-  create: true
+  create: false
   # Annotations to add to the service account
   annotations: {}
   # The name of the service account to use.
@@ -38,19 +38,19 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 80
+  port: 59125
 
 ingress:
-  enabled: false
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: chart-example.local
+    - host: tts.andreitorres.tech
       paths:
       - path: /
         backend:
-          serviceName: chart-example.local
+          serviceName: tts.andreitorres.tech
           servicePort: 80
   tls: []
   #  - secretName: chart-example-tls
