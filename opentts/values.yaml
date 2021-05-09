@@ -46,11 +46,11 @@ ingress:
     kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: tts.andreitorres.tech
+    - host: opentts.andreitorres.tech
       paths:
       - path: /
         backend:
-          serviceName: tts.andreitorres.tech
+          serviceName: opentts.andreitorres.tech
           servicePort: 80
   tls: []
   #  - secretName: chart-example-tls
